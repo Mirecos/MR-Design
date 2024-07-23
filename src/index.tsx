@@ -1,3 +1,6 @@
-export function multiply(a: number, b: number): Promise<number> {
-  return Promise.resolve(a * b);
-}
+import MButton from './MButton';
+import MText from './MText';
+import MTextInput from './MTextInput';
+import MCircularLoading from './MCircularLoading';
+
+export { MButton, MText, MTextInput, MCircularLoading };
