@@ -47,6 +47,10 @@ export default function MCircularLoading(props: MCircularLoadingProps) {
       borderWidth: 10,
       borderRadius: size / 2,
     },
+    text: {
+      color: theme.colors.primary,
+      paddingTop: 8,
+    },
   });
 
   React.useEffect(() => {
@@ -66,10 +70,7 @@ export default function MCircularLoading(props: MCircularLoadingProps) {
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.box, animatedStyles]} />
-      <MText
-        text="Loading..."
-        style={{ color: theme.colors.primary, paddingTop: 8 }}
-      />
+      <MText text="Loading..." style={styles.text} />
     </View>
   );
 }
