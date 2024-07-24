@@ -8,7 +8,7 @@ import Animated, {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
-import ThemeContext from './context/Theme';
+import ThemeContext from '../context/Theme';
 import MText from './MText';
 
 interface MCircularLoadingProps {
@@ -18,7 +18,7 @@ interface MCircularLoadingProps {
 
 export default function MCircularLoading(props: MCircularLoadingProps) {
   const rotation = useSharedValue<number>(0);
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext.themeContext);
 
   const size =
     props.size === 'sm'

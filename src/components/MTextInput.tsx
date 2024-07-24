@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { TextInput, StyleSheet } from 'react-native';
-import ThemeContext from './context/Theme';
+import ThemeContext from '../context/Theme';
 
 interface MTextInputProps {
   onChangeText: (text: string) => void;
@@ -11,7 +11,7 @@ interface MTextInputProps {
 }
 
 export default function MTextInput(props: MTextInputProps) {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext.themeContext);
 
   const styles = StyleSheet.create({
     text: {

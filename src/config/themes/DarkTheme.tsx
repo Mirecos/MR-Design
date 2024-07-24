@@ -1,6 +1,6 @@
 import type CustomTheme from '../../types/CustomTheme';
 
-const CustomDarkTheme: CustomTheme = {
+export let CustomDarkTheme: CustomTheme = {
   dark: true,
   colors: {
     primary: 'rgb(170, 141, 91)',
@@ -20,4 +20,7 @@ const CustomDarkTheme: CustomTheme = {
     sm: 14,
   },
 };
-export default CustomDarkTheme;
+
+export function setDarkTheme(theme: CustomTheme) {
+  CustomDarkTheme = theme;
+}

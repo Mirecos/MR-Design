@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import ThemeContext from './context/Theme';
+import ThemeContext from '../context/Theme';
 
 interface MButtonProps {
   text: string;
@@ -9,7 +9,7 @@ interface MButtonProps {
 }
 
 export default function MButton(props: MButtonProps) {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext.themeContext);
 
   const styles = StyleSheet.create({
     text: {

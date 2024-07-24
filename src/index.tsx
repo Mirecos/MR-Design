@@ -1,6 +1,5 @@
-import MButton from './MButton';
-import MText from './MText';
-import MTextInput from './MTextInput';
-import MCircularLoading from './MCircularLoading';
+import * as component from './components';
+import ThemeManager from './ThemeManager';
 
-export { MButton, MText, MTextInput, MCircularLoading };
+export { component };
+export { ThemeManager };

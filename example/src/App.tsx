@@ -1,10 +1,10 @@
 import { StyleSheet, View } from 'react-native';
-import { MCircularLoading } from 'mcomponents';
+import { component } from 'mcomponents';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <MCircularLoading size="med" />
+      <component.default.MCircularLoading size="med" />
     </View>
   );
 }

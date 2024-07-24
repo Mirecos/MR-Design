@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { StyleSheet, Text } from 'react-native';
-import ThemeContext from './context/Theme';
+import ThemeContext from '../context/Theme';
 
 interface MTextProps {
   text: string;
@@ -8,7 +8,7 @@ interface MTextProps {
 }
 
 export default function MText(props: MTextProps) {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext.themeContext);
 
   const styles = StyleSheet.create({
     text: {

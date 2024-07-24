@@ -1,6 +1,6 @@
 import type CustomTheme from '../../types/CustomTheme';
 
-const CustomLightTheme: CustomTheme = {
+export let CustomLightTheme: CustomTheme = {
   dark: false,
   colors: {
     primary: 'rgb(170, 141, 91)',
@@ -20,4 +20,7 @@ const CustomLightTheme: CustomTheme = {
     sm: 14,
   },
 };
-export default CustomLightTheme;
+
+export function setLightTheme(theme: CustomTheme) {
+  CustomLightTheme = theme;
+}
