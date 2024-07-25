@@ -2,6 +2,7 @@ import { createContext } from 'react';
 import type CustomTheme from '../types/CustomTheme';
 import { CustomLightTheme } from '../config/themes/LightTheme';
 import { Appearance } from 'react-native';
+import { CustomDarkTheme } from '../config/themes/DarkTheme';
 
 const colorScheme = Appearance.getColorScheme();
 
@@ -14,6 +15,31 @@ function switchCurrentTheme(): void {
   else currentTheme = 'dark';
 }
 
+function getCurrentTheme(themestr: String): CustomTheme {
+  if (themestr === 'light') return CustomLightTheme;
+  return CustomDarkTheme;
+}
+
 let themeContext = createContext(CustomLightTheme as CustomTheme);
 
-export default { themeContext, currentTheme, switchCurrentTheme };
+interface ThemeManagerProps {
+  children: React.ReactNode;
+  darkTheme?: CustomTheme;
+  lightTheme?: CustomTheme;
+}
+
+function ThemeManager(props: ThemeManagerProps) {
+  return (
+    <themeContext.Provider value={getCurrentTheme(currentTheme)}>
+      {props.children}
+    </themeContext.Provider>
+  );
+}
+
+export default {
+  themeContext,
+  currentTheme,
+  ThemeManager,
+  getCurrentTheme,
+  switchCurrentTheme,
+};
