@@ -12,7 +12,7 @@ export default function MText(props: MTextProps) {
 
   const styles = StyleSheet.create({
     text: {
-      color: theme.colors.text,
+      color: theme.theme.colors.text,
       fontSize: 20,
     },
   });

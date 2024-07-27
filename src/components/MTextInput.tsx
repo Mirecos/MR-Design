@@ -15,7 +15,7 @@ export default function MTextInput(props: MTextInputProps) {
 
   const styles = StyleSheet.create({
     text: {
-      color: theme.colors.text,
+      color: theme.theme.colors.text,
       fontSize: 20,
     },
   });
@@ -24,7 +24,7 @@ export default function MTextInput(props: MTextInputProps) {
     <TextInput
       defaultValue={props.baseContent}
       placeholder={props.placeholder}
-      placeholderTextColor={theme.colors.text}
+      placeholderTextColor={theme.theme.colors.text}
       secureTextEntry={props.isSecure}
       onChangeText={props.onChangeText}
       style={[styles.text, props.style]}

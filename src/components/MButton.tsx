@@ -14,7 +14,9 @@ export default function MButton(props: MButtonProps) {
   const styles = StyleSheet.create({
     text: {
       color:
-        props.style.color !== undefined ? props.style.color : theme.colors.text,
+        props.style.color !== undefined
+          ? props.style.color
+          : theme.theme.colors.text,
       fontSize: 20,
       textAlign: 'center',
     },

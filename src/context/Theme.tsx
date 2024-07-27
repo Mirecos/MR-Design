@@ -1,26 +1,14 @@
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import type CustomTheme from '../types/CustomTheme';
 import { CustomLightTheme } from '../config/themes/LightTheme';
-import { Appearance } from 'react-native';
 import { CustomDarkTheme } from '../config/themes/DarkTheme';
+import { Appearance } from 'react-native';
+import type { ThemeContext } from '../types/ThemeContext';
 
-const colorScheme = Appearance.getColorScheme();
-
-let currentTheme: String = (
-  colorScheme === null ? 'light' : colorScheme
-) as String;
-
-function switchCurrentTheme(): void {
-  if (currentTheme === 'dark') currentTheme = 'light';
-  else currentTheme = 'dark';
-}
-
-function getCurrentTheme(themestr: String): CustomTheme {
-  if (themestr === 'light') return CustomLightTheme;
-  return CustomDarkTheme;
-}
-
-let themeContext = createContext(CustomLightTheme as CustomTheme);
+let themeContext = createContext({
+  theme: CustomLightTheme,
+  setTheme: () => {},
+} as ThemeContext);
 
 interface ThemeManagerProps {
   children: React.ReactNode;
@@ -29,8 +17,19 @@ interface ThemeManagerProps {
 }
 
 function ThemeManager(props: ThemeManagerProps) {
+  const colorScheme = Appearance.getColorScheme();
+
+  const [theme, setTheme] = useState(
+    colorScheme === null ? 'light' : colorScheme
+  );
+
   return (
-    <themeContext.Provider value={getCurrentTheme(currentTheme)}>
+    <themeContext.Provider
+      value={{
+        theme: theme === 'light' ? CustomLightTheme : CustomDarkTheme,
+        setTheme: setTheme,
+      }}
+    >
       {props.children}
     </themeContext.Provider>
   );
@@ -38,8 +37,5 @@ function ThemeManager(props: ThemeManagerProps) {
 
 export default {
   themeContext,
-  currentTheme,
   ThemeManager,
-  getCurrentTheme,
-  switchCurrentTheme,
 };

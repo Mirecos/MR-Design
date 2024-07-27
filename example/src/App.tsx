@@ -4,6 +4,7 @@ import {
   Theme,
   LightTheme,
   type CustomTheme,
+  MThemeSwitch,
 } from 'mcomponents';
 
 let CustomLightTheme: CustomTheme = {
@@ -33,6 +34,7 @@ export default function App() {
     <Theme.ThemeManager>
       <View style={styles.container}>
         <MCircularLoading size="med" />
+        <MThemeSwitch />
       </View>
     </Theme.ThemeManager>
   );
