@@ -22,11 +22,11 @@ export default function MCircularLoading(props: MCircularLoadingProps) {
 
   const size =
     props.size === 'sm'
-      ? theme.text.sm * 8
+      ? theme.theme.text.sm * 8
       : props.size === 'med'
-        ? theme.text.med * 8
+        ? theme.theme.text.med * 8
         : props.size === 'lg'
-          ? theme.text.lg * 8
+          ? theme.theme.text.lg * 8
           : undefined;
   if (size === undefined)
     throw new Error('Invalid size for MCircularLoading component.');
@@ -40,7 +40,7 @@ export default function MCircularLoading(props: MCircularLoadingProps) {
     box: {
       width: size,
       height: size,
-      borderTopColor: theme.colors.primary,
+      borderTopColor: theme.theme.colors.primary,
       borderBottomColor: `rgba(0,0,0,0.1)`,
       borderRightColor: `rgba(0,0,0,0.1)`,
       borderLeftColor: `rgba(0,0,0,0.1)`,
@@ -48,7 +48,7 @@ export default function MCircularLoading(props: MCircularLoadingProps) {
       borderRadius: size / 2,
     },
     text: {
-      color: theme.colors.primary,
+      color: theme.theme.colors.primary,
       paddingTop: 8,
     },
   });
