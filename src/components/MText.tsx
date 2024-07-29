@@ -6,6 +6,7 @@ import { sizeOf } from '../config/utils/resizer';
 export interface MTextProps {
   text: string;
   size: 'sm' | 'med' | 'lg';
+  center?: boolean;
   style?: any;
 }
 
@@ -19,7 +20,17 @@ export default function MText(props: MTextProps) {
       color: theme.theme.colors.text,
       fontSize: size,
     },
+    center: {
+      flex: 1,
+      alignSelf: 'center',
+    },
   });
 
-  return <Text style={[styles.text, props.style]}>{props.text}</Text>;
+  return (
+    <Text
+      style={[styles.text, props.style, props.center ? styles.center : null]}
+    >
+      {props.text}
+    </Text>
+  );
 }

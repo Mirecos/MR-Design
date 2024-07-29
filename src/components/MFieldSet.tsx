@@ -1,8 +1,12 @@
 import MTextInput from './MTextInput';
 import MText from './MText';
 import MVertical from './MVertical';
+import { StyleSheet } from 'react-native';
+import { useContext } from 'react';
+import Theme from '../context/Theme';
 
 export interface MFieldSetProps {
+  fieldName: string;
   onChangeText: (text: string) => void;
   baseContent: string;
   placeholder?: string;
@@ -12,9 +16,16 @@ export interface MFieldSetProps {
 }
 
 export default function MFieldSet(props: MFieldSetProps) {
+  const theme = useContext(Theme.themeContext);
+
+  const styles = StyleSheet.create({
+    label: {
+      color: theme.theme.colors.primary,
+    },
+  });
   return (
     <MVertical>
-      <MText size="med" text="My fieldset" />
+      <MText size="sm" text={props.fieldName} style={styles.label} />
       <MTextInput
         baseContent={props.baseContent}
         onChangeText={props.onChangeText}

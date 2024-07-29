@@ -4,6 +4,7 @@ import Theme from '../context/Theme';
 
 export interface MCardProps {
   children: React.ReactNode;
+  style: any;
 }
 
 export default function MCard(props: MCardProps) {
@@ -21,5 +22,5 @@ export default function MCard(props: MCardProps) {
     },
   });
 
-  return <View style={styles.container}>{props.children}</View>;
+  return <View style={[styles.container, props.style]}>{props.children}</View>;
 }

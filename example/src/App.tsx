@@ -1,13 +1,12 @@
 import { ScrollView, StyleSheet } from 'react-native';
 import {
-  MCircularLoading,
   Theme,
   LightTheme,
   type CustomTheme,
-  MThemeSwitch,
   MButton,
-  MHorizontal,
-  MVertical,
+  MFieldSet,
+  MCard,
+  MText,
 } from 'mr-design';
 
 let CustomLightTheme: CustomTheme = {
@@ -39,20 +38,22 @@ export default function App() {
         showsVerticalScrollIndicator={true}
         contentContainerStyle={styles.container}
       >
-        <MCircularLoading size="med" />
-
-        <MThemeSwitch />
-        <MHorizontal style={styles.MHori}>
-          <MButton text="test" size="med" />
-          <MButton text="test" size="lg" />
-          <MButton text="test" size="med" />
-        </MHorizontal>
-        <MVertical style={styles.MVert}>
-          <MButton text="test" size="med" />
-          <MButton text="test" size="med" />
-          <MButton text="test" size="med" />
-        </MVertical>
-        <MButton text="Enregistrer" rounded={true} size="med" />
+        <MCard style={styles.card}>
+          <MText text="Connexion :" size="lg" center={true} />
+          <MFieldSet
+            baseContent=""
+            onChangeText={() => {}}
+            size="med"
+            fieldName="Username"
+          />
+          <MFieldSet
+            baseContent=""
+            onChangeText={() => {}}
+            size="med"
+            fieldName="Password"
+          />
+          <MButton size="med" text="Se connecter" />
+        </MCard>
       </ScrollView>
     </Theme.ThemeManager>
   );
@@ -67,5 +68,8 @@ const styles = StyleSheet.create({
   },
   MHori: {
     marginVertical: 20,
+  },
+  card: {
+    gap: 16,
   },
 });
