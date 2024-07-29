@@ -10,8 +10,9 @@ import Animated, {
 } from 'react-native-reanimated';
 import ThemeContext from '../context/Theme';
 import MText from './MText';
+import { sizeOf } from '../config/utils/resizer';
 
-interface MCircularLoadingProps {
+export interface MCircularLoadingProps {
   size: 'sm' | 'med' | 'lg';
   style?: any;
 }
@@ -20,17 +21,8 @@ export default function MCircularLoading(props: MCircularLoadingProps) {
   const rotation = useSharedValue<number>(0);
   const theme = useContext(ThemeContext.themeContext);
 
-  const size =
-    props.size === 'sm'
-      ? theme.theme.text.sm * 8
-      : props.size === 'med'
-        ? theme.theme.text.med * 8
-        : props.size === 'lg'
-          ? theme.theme.text.lg * 8
-          : undefined;
-  if (size === undefined)
-    throw new Error('Invalid size for MCircularLoading component.');
-  console.log(size);
+  const size = sizeOf(props.size, theme.theme) * 8;
+
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -70,7 +62,7 @@ export default function MCircularLoading(props: MCircularLoadingProps) {
   return (
     <View style={styles.container}>
       <Animated.View style={[styles.box, animatedStyles]} />
-      <MText text="Loading..." style={styles.text} />
+      <MText text="Loading..." style={styles.text} size={props.size} />
     </View>
   );
 }

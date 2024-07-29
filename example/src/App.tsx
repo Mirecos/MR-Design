@@ -1,11 +1,12 @@
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import {
   MCircularLoading,
   Theme,
   LightTheme,
   type CustomTheme,
   MThemeSwitch,
-} from 'mcomponents';
+  MButton,
+} from 'mr-design';
 
 let CustomLightTheme: CustomTheme = {
   dark: false,
@@ -31,19 +32,25 @@ let CustomLightTheme: CustomTheme = {
 export default function App() {
   LightTheme.setLightTheme(CustomLightTheme);
   return (
-    <Theme.ThemeManager>
-      <View style={styles.container}>
+    <Theme.ThemeManager lightTheme={CustomLightTheme}>
+      <ScrollView
+        showsVerticalScrollIndicator={true}
+        contentContainerStyle={styles.container}
+      >
+        <MCircularLoading size="med" />
+        <MCircularLoading size="med" />
+        <MCircularLoading size="med" />
+        <MCircularLoading size="med" />
         <MCircularLoading size="med" />
         <MThemeSwitch />
-      </View>
+        <MButton text="Enregistrer" rounded={true} size="med" />
+      </ScrollView>
     </Theme.ThemeManager>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 100,
   },
 });
