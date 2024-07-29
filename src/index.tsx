@@ -6,6 +6,8 @@ import MCircularLoading from './components/MCircularLoading';
 import MThemeSwitch from './components/MThemeSwitch';
 import MHorizontal from './components/MHorizontal';
 import MVertical from './components/MVertical';
+import MCard from './components/MCard';
+import MFieldSet from './components/MFieldSet';
 export {
   MButton,
   MText,
@@ -14,6 +16,8 @@ export {
   MThemeSwitch,
   MVertical,
   MHorizontal,
+  MCard,
+  MFieldSet,
 };
 
 // Theme utilities

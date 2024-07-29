@@ -14,7 +14,7 @@ let CustomLightTheme: CustomTheme = {
   dark: false,
   colors: {
     primary: 'rgb(2, 141, 91)',
-    background: 'rgb(235, 235, 235)',
+    background: 'rgb(255, 255, 255)',
     card: 'rgb(235, 235, 235)',
     variant: 'rgb(200, 200, 200)',
     inversed: 'rgb(0, 0, 0)',
@@ -40,8 +40,7 @@ export default function App() {
         contentContainerStyle={styles.container}
       >
         <MCircularLoading size="med" />
-        <MCircularLoading size="med" />
-        <MCircularLoading size="med" />
+
         <MThemeSwitch />
         <MHorizontal style={styles.MHori}>
           <MButton text="test" size="med" />

@@ -20,6 +20,10 @@ export default function MTextInput(props: MTextInputProps) {
   const styles = StyleSheet.create({
     text: {
       color: theme.theme.colors.text,
+      backgroundColor: theme.theme.colors.card,
+      borderBottomColor: theme.theme.colors.primary,
+      borderBottomWidth: 1,
+      height: size * 2.5,
       fontSize: size,
     },
   });

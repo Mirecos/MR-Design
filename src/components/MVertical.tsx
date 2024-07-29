@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native';
 
 export interface MVerticalProps {
   children: React.ReactNode;
-  style: any;
+  style?: any;
 }
 
 export default function MVertical(props: MVerticalProps) {
@@ -10,7 +10,6 @@ export default function MVertical(props: MVerticalProps) {
     container: {
       flex: 1,
       flexDirection: 'column',
-      alignSelf: 'center',
       justifyContent: 'space-evenly',
     },
   });
