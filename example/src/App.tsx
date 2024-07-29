@@ -6,6 +6,8 @@ import {
   type CustomTheme,
   MThemeSwitch,
   MButton,
+  MHorizontal,
+  MVertical,
 } from 'mr-design';
 
 let CustomLightTheme: CustomTheme = {
@@ -40,9 +42,17 @@ export default function App() {
         <MCircularLoading size="med" />
         <MCircularLoading size="med" />
         <MCircularLoading size="med" />
-        <MCircularLoading size="med" />
-        <MCircularLoading size="med" />
         <MThemeSwitch />
+        <MHorizontal style={styles.MHori}>
+          <MButton text="test" size="med" />
+          <MButton text="test" size="lg" />
+          <MButton text="test" size="med" />
+        </MHorizontal>
+        <MVertical style={styles.MVert}>
+          <MButton text="test" size="med" />
+          <MButton text="test" size="med" />
+          <MButton text="test" size="med" />
+        </MVertical>
         <MButton text="Enregistrer" rounded={true} size="med" />
       </ScrollView>
     </Theme.ThemeManager>
@@ -52,5 +62,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     paddingTop: 100,
+  },
+  MVert: {
+    width: '30%',
+  },
+  MHori: {
+    marginVertical: 20,
   },
 });

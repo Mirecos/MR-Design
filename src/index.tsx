@@ -4,7 +4,17 @@ import MText from './components/MText';
 import MTextInput from './components/MTextInput';
 import MCircularLoading from './components/MCircularLoading';
 import MThemeSwitch from './components/MThemeSwitch';
-export { MButton, MText, MTextInput, MCircularLoading, MThemeSwitch };
+import MHorizontal from './components/MHorizontal';
+import MVertical from './components/MVertical';
+export {
+  MButton,
+  MText,
+  MTextInput,
+  MCircularLoading,
+  MThemeSwitch,
+  MVertical,
+  MHorizontal,
+};
 
 // Theme utilities
 import * as DarkTheme from './config/themes/DarkTheme';
