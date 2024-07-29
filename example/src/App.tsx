@@ -6,7 +6,7 @@ import {
   MButton,
   MFieldSet,
   MCard,
-  MText,
+  MTitle,
 } from 'mr-design';
 
 let CustomLightTheme: CustomTheme = {
@@ -14,7 +14,7 @@ let CustomLightTheme: CustomTheme = {
   colors: {
     primary: 'rgb(2, 141, 91)',
     background: 'rgb(255, 255, 255)',
-    card: 'rgb(235, 235, 235)',
+    card: 'rgb(245, 245, 245)',
     variant: 'rgb(200, 200, 200)',
     inversed: 'rgb(0, 0, 0)',
 
@@ -39,7 +39,7 @@ export default function App() {
         contentContainerStyle={styles.container}
       >
         <MCard style={styles.card}>
-          <MText text="Connexion :" size="lg" center={true} />
+          <MTitle text="Connexion" size="sm" center={true} />
           <MFieldSet
             baseContent=""
             onChangeText={() => {}}
@@ -51,8 +51,9 @@ export default function App() {
             onChangeText={() => {}}
             size="med"
             fieldName="Password"
+            isSecure={true}
           />
-          <MButton size="med" text="Se connecter" />
+          <MButton size="med" text="Se connecter" rounded={true} />
         </MCard>
       </ScrollView>
     </Theme.ThemeManager>

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 import ThemeContext from '../context/Theme';
 import { sizeOf } from '../config/utils/resizer';
@@ -14,14 +14,14 @@ export interface MTextInputProps {
 
 export default function MTextInput(props: MTextInputProps) {
   const theme = useContext(ThemeContext.themeContext);
-
+  const [color, setColor] = React.useState(theme.theme.colors.text);
   const size = sizeOf(props.size, theme.theme);
 
   const styles = StyleSheet.create({
     text: {
       color: theme.theme.colors.text,
       backgroundColor: theme.theme.colors.card,
-      borderBottomColor: theme.theme.colors.primary,
+      borderBottomColor: color,
       borderBottomWidth: 1,
       height: size * 2.5,
       fontSize: size,
@@ -30,6 +30,12 @@ export default function MTextInput(props: MTextInputProps) {
 
   return (
     <TextInput
+      onFocus={() => {
+        setColor(theme.theme.colors.primary);
+      }}
+      onBlur={() => {
+        setColor(theme.theme.colors.text);
+      }}
       defaultValue={props.baseContent}
       placeholder={props.placeholder}
       placeholderTextColor={theme.theme.colors.text}

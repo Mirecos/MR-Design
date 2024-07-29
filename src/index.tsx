@@ -8,6 +8,7 @@ import MHorizontal from './components/MHorizontal';
 import MVertical from './components/MVertical';
 import MCard from './components/MCard';
 import MFieldSet from './components/MFieldSet';
+import MTitle from './components/MTitle';
 export {
   MButton,
   MText,
@@ -18,6 +19,7 @@ export {
   MHorizontal,
   MCard,
   MFieldSet,
+  MTitle,
 };
 
 // Theme utilities

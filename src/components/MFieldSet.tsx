@@ -20,7 +20,7 @@ export default function MFieldSet(props: MFieldSetProps) {
 
   const styles = StyleSheet.create({
     label: {
-      color: theme.theme.colors.primary,
+      color: theme.theme.colors.text,
     },
   });
   return (
