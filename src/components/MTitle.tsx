@@ -1,24 +1,24 @@
-import { useContext } from 'react';
 import { StyleSheet, Text } from 'react-native';
-import ThemeContext from '../context/Theme';
 import { sizeOf } from '../config/utils/resizer';
+import { useContext } from 'react';
+import ThemeContext from '../context/Theme';
 
-export interface MTextProps {
-  text: string;
+export interface MTitleProps {
   size: 'sm' | 'med' | 'lg';
+  text: string;
   center?: boolean;
-  style?: any;
 }
 
-export default function MText(props: MTextProps) {
+export default function MTitle(props: MTitleProps) {
   const theme = useContext(ThemeContext.themeContext);
 
   const size = sizeOf(props.size, theme.theme);
 
   const styles = StyleSheet.create({
-    text: {
-      color: theme.theme.colors.text,
-      fontSize: size,
+    title: {
+      color: theme.theme.colors.primary,
+      fontSize: size * 2,
+      fontWeight: 'bold',
     },
     center: {
       flex: 1,
@@ -27,9 +27,7 @@ export default function MText(props: MTextProps) {
   });
 
   return (
-    <Text
-      style={[styles.text, props.style, props.center ? styles.center : null]}
-    >
+    <Text style={[styles.title, props.center ? styles.center : null]}>
       {props.text}
     </Text>
   );

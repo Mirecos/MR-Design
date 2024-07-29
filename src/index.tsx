@@ -4,7 +4,23 @@ import MText from './components/MText';
 import MTextInput from './components/MTextInput';
 import MCircularLoading from './components/MCircularLoading';
 import MThemeSwitch from './components/MThemeSwitch';
-export { MButton, MText, MTextInput, MCircularLoading, MThemeSwitch };
+import MHorizontal from './components/MHorizontal';
+import MVertical from './components/MVertical';
+import MCard from './components/MCard';
+import MFieldSet from './components/MFieldSet';
+import MTitle from './components/MTitle';
+export {
+  MButton,
+  MText,
+  MTextInput,
+  MCircularLoading,
+  MThemeSwitch,
+  MVertical,
+  MHorizontal,
+  MCard,
+  MFieldSet,
+  MTitle,
+};
 
 // Theme utilities
 import * as DarkTheme from './config/themes/DarkTheme';

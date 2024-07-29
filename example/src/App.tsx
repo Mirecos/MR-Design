@@ -1,18 +1,20 @@
-import { StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import {
-  MCircularLoading,
   Theme,
   LightTheme,
   type CustomTheme,
-  MThemeSwitch,
-} from 'mcomponents';
+  MButton,
+  MFieldSet,
+  MCard,
+  MTitle,
+} from 'mr-design';
 
 let CustomLightTheme: CustomTheme = {
   dark: false,
   colors: {
     primary: 'rgb(2, 141, 91)',
-    background: 'rgb(235, 235, 235)',
-    card: 'rgb(235, 235, 235)',
+    background: 'rgb(255, 255, 255)',
+    card: 'rgb(245, 245, 245)',
     variant: 'rgb(200, 200, 200)',
     inversed: 'rgb(0, 0, 0)',
 
@@ -31,19 +33,44 @@ let CustomLightTheme: CustomTheme = {
 export default function App() {
   LightTheme.setLightTheme(CustomLightTheme);
   return (
-    <Theme.ThemeManager>
-      <View style={styles.container}>
-        <MCircularLoading size="med" />
-        <MThemeSwitch />
-      </View>
+    <Theme.ThemeManager lightTheme={CustomLightTheme}>
+      <ScrollView
+        showsVerticalScrollIndicator={true}
+        contentContainerStyle={styles.container}
+      >
+        <MCard style={styles.card}>
+          <MTitle text="Connexion" size="sm" center={true} />
+          <MFieldSet
+            baseContent=""
+            onChangeText={() => {}}
+            size="med"
+            fieldName="Username"
+          />
+          <MFieldSet
+            baseContent=""
+            onChangeText={() => {}}
+            size="med"
+            fieldName="Password"
+            isSecure={true}
+          />
+          <MButton size="med" text="Se connecter" rounded={true} />
+        </MCard>
+      </ScrollView>
     </Theme.ThemeManager>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 100,
+  },
+  MVert: {
+    width: '30%',
+  },
+  MHori: {
+    marginVertical: 20,
+  },
+  card: {
+    gap: 16,
   },
 });
