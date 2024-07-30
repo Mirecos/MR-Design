@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Switch } from 'react-native';
-import Theme from '../context/Theme';
+import Theme from '../../context/Theme';
 
 let isEnabled = false;
 

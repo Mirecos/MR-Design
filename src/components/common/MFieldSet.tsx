@@ -1,9 +1,9 @@
 import MTextInput from './MTextInput';
 import MText from './MText';
-import MVertical from './MVertical';
+import MVertical from '../layout/MVertical';
 import { StyleSheet } from 'react-native';
 import { useContext } from 'react';
-import Theme from '../context/Theme';
+import Theme from '../../context/Theme';
 
 export interface MFieldSetProps {
   fieldName: string;

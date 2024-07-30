@@ -1,7 +1,7 @@
 import { StyleSheet, Text } from 'react-native';
-import { sizeOf } from '../config/utils/resizer';
+import { sizeOf } from '../../config/utils/resizer';
 import { useContext } from 'react';
-import ThemeContext from '../context/Theme';
+import ThemeContext from '../../context/Theme';
 
 export interface MTitleProps {
   size: 'sm' | 'med' | 'lg';

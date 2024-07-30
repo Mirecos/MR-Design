@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Theme from '../context/Theme';
+import Theme from '../../context/Theme';
 
 export interface MCardProps {
   children: React.ReactNode;

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { TextInput, StyleSheet } from 'react-native';
-import ThemeContext from '../context/Theme';
-import { sizeOf } from '../config/utils/resizer';
+import ThemeContext from '../../context/Theme';
+import { sizeOf } from '../../config/utils/resizer';
 
 export interface MTextInputProps {
   onChangeText: (text: string) => void;

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import ThemeContext from '../context/Theme';
-import { sizeOf } from '../config/utils/resizer';
+import ThemeContext from '../../context/Theme';
+import { sizeOf } from '../../config/utils/resizer';
 
 export interface MButtonProps {
   text: string;

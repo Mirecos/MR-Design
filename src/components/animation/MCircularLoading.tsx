@@ -8,9 +8,9 @@ import Animated, {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
-import ThemeContext from '../context/Theme';
-import MText from './MText';
-import { sizeOf } from '../config/utils/resizer';
+import ThemeContext from '../../context/Theme';
+import MText from '../common/MText';
+import { sizeOf } from '../../config/utils/resizer';
 
 export interface MCircularLoadingProps {
   size: 'sm' | 'med' | 'lg';

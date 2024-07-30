@@ -1,14 +1,14 @@
 // Components
 import MButton from './components/MButton';
 import MText from './components/MText';
-import MTextInput from './components/MTextInput';
-import MCircularLoading from './components/MCircularLoading';
+import MTextInput from './components/common/MTextInput';
+import MCircularLoading from './components/animation/MCircularLoading';
 import MThemeSwitch from './components/MThemeSwitch';
-import MHorizontal from './components/MHorizontal';
-import MVertical from './components/MVertical';
+import MHorizontal from './components/layout/MHorizontal';
+import MVertical from './components/layout/MVertical';
 import MCard from './components/MCard';
-import MFieldSet from './components/MFieldSet';
-import MTitle from './components/MTitle';
+import MFieldSet from './components/common/MFieldSet';
+import MTitle from './components/common/MTitle';
 export {
   MButton,
   MText,
