@@ -39,7 +39,8 @@
     "prepare": "bob build",
     "release": "release-it",
     "qlint": "eslint --fix \"**/*.{js,ts,tsx}\"",
-    "qprettier": "prettier --write \"**/*.{ts,tsx}\"" 
+    "qprettier": "prettier --write \"**/*.{ts,tsx}\"",
+    "yarnlock": "yarn install --mode update-lockfile"
   },
   "keywords": [
     "react-native",
