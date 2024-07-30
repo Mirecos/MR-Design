@@ -7,6 +7,8 @@ import {
   MFieldSet,
   MCard,
   MTitle,
+  MCircularLoading,
+  MThemeSwitch,
 } from 'mr-design';
 
 let CustomLightTheme: CustomTheme = {
@@ -55,6 +57,8 @@ export default function App() {
           />
           <MButton size="med" text="Se connecter" rounded={true} />
         </MCard>
+        <MCircularLoading size="med" />
+        <MThemeSwitch />
       </ScrollView>
     </Theme.ThemeManager>
   );
