@@ -1,6 +1,6 @@
 {
   "name": "mr-design",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A react-native components library",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",

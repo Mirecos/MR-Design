@@ -12,9 +12,13 @@ export interface MButtonProps {
 }
 
 /**
- * A simple Button component
- * @param props
- * @returns
+ * A simple Button component which follows the current Theme of the app.
+ * @param text The text to display in the component
+ * @param size The size of the component
+ * @param rounded A boolean to specify if we need to round borders
+ * @param onPress The action to execute on press
+ * @param style Any kind of style to override the component
+ * @returns A simple Button component
  */
 export default function MButton(props: MButtonProps) {
   const theme = useContext(ThemeContext.themeContext);
