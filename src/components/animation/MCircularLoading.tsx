@@ -46,6 +46,7 @@ export default function MCircularLoading(props: MCircularLoadingProps) {
   });
 
   React.useEffect(() => {
+    rotation.value = 0;
     rotation.value = withRepeat(
       withTiming(1, {
         duration: 2000,
