@@ -16,7 +16,12 @@ export interface MCircularLoadingProps {
   size: 'sm' | 'med' | 'lg';
   style?: any;
 }
-
+/**
+ * An easy to implement self sufficient circular loading animation to use during loading times
+ * @param size The size of the component
+ * @param style any kind of style to override the component
+ * @returns A circuloar loading component to integrate during loading times.
+ */
 export default function MCircularLoading(props: MCircularLoadingProps) {
   const rotation = useSharedValue<number>(0);
   const theme = useContext(ThemeContext.themeContext);

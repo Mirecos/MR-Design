@@ -6,7 +6,12 @@ export interface MCardProps {
   children: React.ReactNode;
   style: any;
 }
-
+/**
+ * A simple card component which follows the current theme.
+ * @param children The components inside of the card
+ * @param style Any kind of style to override the component
+ * @returns A simple card component
+ */
 export default function MCard(props: MCardProps) {
   const theme = useContext(Theme.themeContext);
 

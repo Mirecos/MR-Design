@@ -9,7 +9,14 @@ export interface MTextProps {
   center?: boolean;
   style?: any;
 }
-
+/**
+ * A simple Text component which follows the current Theme of the app.
+ * @param text The text to display in the component
+ * @param size The size of the component
+ * @param center A boolean to specify if we want to center the text
+ * @param style Any kind of style to overried
+ * @returns A simple Text component
+ */
 export default function MText(props: MTextProps) {
   const theme = useContext(ThemeContext.themeContext);
 
