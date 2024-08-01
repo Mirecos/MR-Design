@@ -16,15 +16,12 @@ export interface MTextInputProps {
  *
  * The component usually works with a state. You need to declare your state and give it like following :
  *
- * const [state, setState] = useState(0)
+ * `const [state, setState] = useState(0);`
  *
- * <MtextInput
- *
- *  baseContent={state}
- *
- *  onChangeText={(value)=>{setState(value)}}
- *
- * />
+ * `<MtextInput
+ * baseContent={state}
+ * onChangeText={(value)=>{setState(value)}}
+ * />`
  *
  * @param onChangeText The action to execute when users modify the text
  * @param size The size of the component
