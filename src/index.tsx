@@ -25,8 +25,8 @@ export {
 // Theme utilities
 import * as DarkTheme from './config/themes/DarkTheme';
 import * as LightTheme from './config/themes/LightTheme';
-import Theme from './context/Theme';
-export { Theme, LightTheme, DarkTheme };
+import * as theme from './context/Theme';
+export { theme, LightTheme, DarkTheme };
 
 // Types for theme
 import type CustomTheme from './types/CustomTheme';

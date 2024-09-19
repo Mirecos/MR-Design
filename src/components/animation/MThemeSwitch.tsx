@@ -1,8 +1,7 @@
-import { useContext } from 'react';
 import { Switch } from 'react-native';
-import Theme from '../../context/Theme';
+import { useSwitchTheme, useTheme } from '../../context/Theme';
+import { useState } from 'react';
 
-let isEnabled = false;
 /**
  *  WARNING : You need to implement the ThemeManager context at the root of your application to work with this component.
  *
@@ -11,27 +10,28 @@ let isEnabled = false;
  * @returns A switch component that changes current Theme.
  */
 export default function MThemeSwitch() {
-  const theme = useContext(Theme.themeContext);
+  const theme = useTheme();
+  const switchTheme = useSwitchTheme();
+  const [toggled, setToggled] = useState(false);
 
   const toggleSwitch = () => {
-    if (isEnabled) {
-      isEnabled = false;
-      theme.setTheme('light');
+    if (toggled) {
+      setToggled(false);
     } else {
-      isEnabled = true;
-      theme.setTheme('dark');
+      setToggled(true);
     }
+    switchTheme(theme.dark ? 'light' : 'dark');
   };
 
   return (
     <Switch
       trackColor={{
-        false: theme.theme.colors.variant,
-        true: theme.theme.colors.variant,
+        false: theme.colors.variant,
+        true: theme.colors.variant,
       }}
-      thumbColor={theme.theme.colors.primary}
+      thumbColor={theme.colors.primary}
       onValueChange={toggleSwitch}
-      value={isEnabled}
+      value={toggled}
     />
   );
 }

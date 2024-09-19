@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
-import ThemeContext from '../../context/Theme';
 import { sizeOf } from '../../config/utils/resizer';
+import { useTheme } from '../../context/Theme';
 
 export interface MTextInputProps {
   onChangeText: (text: string) => void;
@@ -32,14 +32,14 @@ export interface MTextInputProps {
  * @returns A simple TextInput component
  */
 export default function MTextInput(props: MTextInputProps) {
-  const theme = useContext(ThemeContext.themeContext);
-  const [color, setColor] = React.useState(theme.theme.colors.text);
-  const size = sizeOf(props.size, theme.theme);
+  const theme = useTheme();
+  const [color, setColor] = React.useState(theme.colors.text);
+  const size = sizeOf(props.size, theme);
 
   const styles = StyleSheet.create({
     text: {
-      color: theme.theme.colors.text,
-      backgroundColor: theme.theme.colors.card,
+      color: theme.colors.text,
+      backgroundColor: theme.colors.card,
       borderBottomColor: color,
       borderBottomWidth: 1,
       height: size * 2.5,
@@ -50,14 +50,14 @@ export default function MTextInput(props: MTextInputProps) {
   return (
     <TextInput
       onFocus={() => {
-        setColor(theme.theme.colors.primary);
+        setColor(theme.colors.primary);
       }}
       onBlur={() => {
-        setColor(theme.theme.colors.text);
+        setColor(theme.colors.text);
       }}
       defaultValue={props.baseContent}
       placeholder={props.placeholder}
-      placeholderTextColor={theme.theme.colors.text}
+      placeholderTextColor={theme.colors.text}
       secureTextEntry={props.isSecure}
       onChangeText={props.onChangeText}
       style={[styles.text, props.style]}

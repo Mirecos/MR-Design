@@ -1,14 +1,14 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import type CustomTheme from '../types/CustomTheme';
 import { CustomLightTheme } from '../config/themes/LightTheme';
 import { CustomDarkTheme } from '../config/themes/DarkTheme';
 import { Appearance } from 'react-native';
 import type { ThemeContext } from '../types/ThemeContext';
 
-let themeContext = createContext({
+let themeContext = createContext<ThemeContext>({
   theme: CustomLightTheme,
   setTheme: () => {},
-} as ThemeContext);
+});
 
 interface ThemeManagerProps {
   children: React.ReactNode;
@@ -35,7 +35,16 @@ function ThemeManager(props: ThemeManagerProps) {
   );
 }
 
-export default {
-  themeContext,
-  ThemeManager,
-};
+function useTheme() {
+  const ctx = useContext(themeContext);
+
+  return ctx.theme;
+}
+
+function useSwitchTheme() {
+  const ctx = useContext(themeContext);
+
+  return ctx.setTheme;
+}
+
+export { useTheme, useSwitchTheme, ThemeManager };

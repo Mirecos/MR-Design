@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { StyleSheet } from 'react-native';
 import { View } from 'react-native';
 import Animated, {
@@ -8,7 +8,7 @@ import Animated, {
   withRepeat,
   withTiming,
 } from 'react-native-reanimated';
-import ThemeContext from '../../context/Theme';
+import { useTheme } from '../../context/Theme';
 import MText from '../common/MText';
 import { sizeOf } from '../../config/utils/resizer';
 
@@ -24,9 +24,9 @@ export interface MCircularLoadingProps {
  */
 export default function MCircularLoading(props: MCircularLoadingProps) {
   const rotation = useSharedValue<number>(0);
-  const theme = useContext(ThemeContext.themeContext);
+  const theme = useTheme();
 
-  const size = sizeOf(props.size, theme.theme) * 8;
+  const size = sizeOf(props.size, theme) * 8;
 
   const styles = StyleSheet.create({
     container: {
@@ -37,7 +37,7 @@ export default function MCircularLoading(props: MCircularLoadingProps) {
     box: {
       width: size,
       height: size,
-      borderTopColor: theme.theme.colors.primary,
+      borderTopColor: theme.colors.primary,
       borderBottomColor: `rgba(0,0,0,0.1)`,
       borderRightColor: `rgba(0,0,0,0.1)`,
       borderLeftColor: `rgba(0,0,0,0.1)`,
@@ -45,7 +45,7 @@ export default function MCircularLoading(props: MCircularLoadingProps) {
       borderRadius: size / 2,
     },
     text: {
-      color: theme.theme.colors.primary,
+      color: theme.colors.primary,
       paddingTop: 8,
     },
   });

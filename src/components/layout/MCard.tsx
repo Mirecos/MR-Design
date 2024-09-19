@@ -1,6 +1,5 @@
-import { useContext } from 'react';
 import { StyleSheet, View } from 'react-native';
-import Theme from '../../context/Theme';
+import { useTheme } from '../../context/Theme';
 
 export interface MCardProps {
   children: React.ReactNode;
@@ -13,7 +12,7 @@ export interface MCardProps {
  * @returns A simple card component
  */
 export default function MCard(props: MCardProps) {
-  const theme = useContext(Theme.themeContext);
+  const theme = useTheme();
 
   const styles = StyleSheet.create({
     container: {
@@ -21,9 +20,9 @@ export default function MCard(props: MCardProps) {
       padding: '5%',
       width: '80%',
       alignSelf: 'center',
-      borderRadius: theme.theme.text.lg,
+      borderRadius: theme.text.lg,
       elevation: 5,
-      backgroundColor: theme.theme.colors.card,
+      backgroundColor: theme.colors.card,
     },
   });
 

@@ -2,8 +2,7 @@ import MTextInput from './MTextInput';
 import MText from './MText';
 import MVertical from '../layout/MVertical';
 import { StyleSheet } from 'react-native';
-import { useContext } from 'react';
-import Theme from '../../context/Theme';
+import { useTheme } from '../../context/Theme';
 
 export interface MFieldSetProps {
   fieldName: string;
@@ -26,11 +25,11 @@ export interface MFieldSetProps {
  * @returns A simple FieldSet component
  */
 export default function MFieldSet(props: MFieldSetProps) {
-  const theme = useContext(Theme.themeContext);
+  const theme = useTheme();
 
   const styles = StyleSheet.create({
     label: {
-      color: theme.theme.colors.text,
+      color: theme.colors.text,
     },
   });
   return (

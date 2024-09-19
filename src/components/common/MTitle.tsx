@@ -1,7 +1,6 @@
 import { StyleSheet, Text } from 'react-native';
 import { sizeOf } from '../../config/utils/resizer';
-import { useContext } from 'react';
-import ThemeContext from '../../context/Theme';
+import { useTheme } from '../../context/Theme';
 
 export interface MTitleProps {
   size: 'sm' | 'med' | 'lg';
@@ -18,13 +17,12 @@ export interface MTitleProps {
  * @returns A simple Title component
  */
 export default function MTitle(props: MTitleProps) {
-  const theme = useContext(ThemeContext.themeContext);
+  const theme = useTheme();
 
-  const size = sizeOf(props.size, theme.theme);
+  const size = sizeOf(props.size, theme);
 
   const styles = StyleSheet.create({
     title: {
-      color: theme.theme.colors.primary,
       fontSize: size * 2,
       fontWeight: 'bold',
     },

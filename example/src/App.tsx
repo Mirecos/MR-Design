@@ -1,6 +1,5 @@
 import { ScrollView, StyleSheet } from 'react-native';
 import {
-  Theme,
   LightTheme,
   type CustomTheme,
   MButton,
@@ -9,7 +8,9 @@ import {
   MTitle,
   MCircularLoading,
   MThemeSwitch,
+  theme,
 } from 'mr-design';
+import Comp from './comp';
 
 let CustomLightTheme: CustomTheme = {
   dark: false,
@@ -35,7 +36,7 @@ let CustomLightTheme: CustomTheme = {
 export default function App() {
   LightTheme.setLightTheme(CustomLightTheme);
   return (
-    <Theme.ThemeManager lightTheme={CustomLightTheme}>
+    <theme.ThemeManager lightTheme={CustomLightTheme}>
       <ScrollView
         showsVerticalScrollIndicator={true}
         contentContainerStyle={styles.container}
@@ -59,8 +60,9 @@ export default function App() {
         </MCard>
         <MCircularLoading size="med" />
         <MThemeSwitch />
+        <Comp />
       </ScrollView>
-    </Theme.ThemeManager>
+    </theme.ThemeManager>
   );
 }
 
